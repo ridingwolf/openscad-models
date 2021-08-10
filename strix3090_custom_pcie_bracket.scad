@@ -1,7 +1,33 @@
 $fn=360;
+translate([0,0,0]) difference() {
+   plate();
+   translate([0,-18,-1])stencil(); 
+}
 
-plate();
+module stencil() {
+    translate([17.25,39.25,0]) screw();
+    translate([37.75,39.25,0]) screw();
+    translate([17.25,60.75,0]) screw();
+    translate([17.25,82.25,0]) screw();
+    translate([17.25,103.75,0]) screw();
+    translate([6.1,31.2,0]) hdmi();
+    translate([26.6,31.2,0]) hdmi();
+    translate([5.7,52.3,0]) displayPort();
+    translate([5.7,73.5,0]) displayPort();
+    translate([5.7,94.7,0]) displayPort();
+}
 
+module screw() {
+    cylinder(h=3, r1=2, r2=2.5);
+}
+
+module displayPort() {
+    cube([6.5,17,3]);
+}
+
+module hdmi() {
+    cube([6.1,15.6,3]);
+}
 
 module plate() {
     difference() {
@@ -27,7 +53,7 @@ module plate() {
 }
 
 module outline() {
-    cube([41.7,119.5,1]);
+    cube([43,119.5,1]);
     translate([0,120,1.5]) cube([42,1,10.5]);
     translate([0,119.5,0]) intersection() {
         translate([0,0,1.5]) rotate([0,90,0]) difference() {
