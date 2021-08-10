@@ -4,6 +4,17 @@ translate([0,0,0]) difference() {
    translate([0,-18,-1])stencil(); 
 }
 
+translate([0,119,3.7])union() {
+    cube([3.75,3,4.5]);
+    translate([3.75,3,2.25]) rotate([90,0,0]) cylinder(h=3, r=2.25);
+}
+
+
+translate([0,0,3.7])union() {
+    cube([3.75,3,4.5]);
+    translate([3.75,3,2.25]) rotate([90,0,0]) cylinder(h=3, r=2.25);
+}
+
 module stencil() {
     translate([17.25,39.25,0]) screw();
     translate([37.75,39.25,0]) screw();
@@ -48,6 +59,10 @@ module plate() {
             cube([10,8,3]);
             translate([5,8,0]) cylinder(h=3, r=5);
         }
+        translate([0,119,3.7])union() {
+            cube([3.75,3,4.5]);
+            translate([3.75,3,2.25]) rotate([90,0,0]) cylinder(h=3, r=2.25);
+}
     }
          
 }
