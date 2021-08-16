@@ -40,7 +40,7 @@ module plate() {
         translate([3,116,-1]) rotate([0,0,135]) cube([5,4,3]);
         translate([40,116,-1]) cube([4,6,14]);
         translate([40,116,-1]) rotate([0,0,-45]) cube([5,4,3]);
-        translate([-3.75,-1,-1]) {
+        translate([-3.25,-1,-1]) {
             cube([10,8,3]);
             translate([5,8,0]) cylinder(h=3, r=5);
         }
